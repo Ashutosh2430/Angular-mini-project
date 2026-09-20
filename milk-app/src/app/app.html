@@ -1,0 +1,92 @@
+<h1>Milk Customer Registration</h1>
+
+<div class="form">
+
+  <label>Name:</label>
+  <input
+    type="text"
+    [(ngModel)]="name"
+    placeholder="Enter name"
+  >
+
+  <br><br>
+
+  <label>Age:</label>
+  <input
+    type="number"
+    [(ngModel)]="age"
+    placeholder="Enter age"
+  >
+
+  <br><br>
+
+  <label>Phone Number:</label>
+  <input
+    type="text"
+    [(ngModel)]="phone"
+    placeholder="Enter phone number"
+  >
+
+  <br><br>
+
+  <label>Milk Type:</label>
+
+  <select [(ngModel)]="milkType">
+
+    <option value="">Select Milk</option>
+
+    <option value="Cow">Cow</option>
+
+    <option value="Buffalo">Buffalo</option>
+
+  </select>
+
+  <br><br>
+
+  <button (click)="saveData()">
+    ENTER
+  </button>
+
+</div>
+
+
+<hr>
+
+
+<h2>Customer Data</h2>
+
+<table>
+
+  <thead>
+
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Phone Number</th>
+      <th>Milk Type</th>
+    </tr>
+
+  </thead>
+
+
+  <tbody>
+
+    @for (customer of customers; track $index) {
+
+      <tr>
+
+        <td>{{ customer.name }}</td>
+
+        <td>{{ customer.age }}</td>
+
+        <td>{{ customer.phone }}</td>
+
+        <td>{{ customer.milkType }}</td>
+
+      </tr>
+
+    }
+
+  </tbody>
+
+</table>
